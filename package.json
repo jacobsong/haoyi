@@ -1,0 +1,22 @@
+{
+  "name": "haoyi",
+  "version": "1.0.0",
+  "description": "haoyi hardware website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobsong/haoyi.git"
+  },
+  "author": "Jacob Song",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobsong/haoyi/issues"
+  },
+  "homepage": "https://github.com/jacobsong/haoyi#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
