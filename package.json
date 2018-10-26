@@ -7,15 +7,10 @@
     "start": "node server.js"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jacobsong/haoyi.git"
+    "type": "git"
   },
   "author": "Jacob Song",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jacobsong/haoyi/issues"
-  },
-  "homepage": "https://github.com/jacobsong/haoyi#readme",
   "dependencies": {
     "express": "^4.16.4"
   }
