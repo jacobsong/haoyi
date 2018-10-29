@@ -17,6 +17,12 @@ body {
   line-height: 1.4;
 }
 
+.banner {
+  font-size: 2em;
+  text-align: center;
+  margin: 0px;
+}
+
 .btn {
   background-color: var(--dark);
   color: var(--light);
