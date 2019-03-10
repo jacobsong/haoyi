@@ -17,7 +17,15 @@ body {
   line-height: 1.4;
 }
 
-.banner {
+.banner1 {
+  font-size: 4em;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  margin: -20px;
+}
+
+.banner2 {
+  font-family: "Courier New", Courier, monospace;
   font-size: 2em;
   text-align: center;
   margin: 0px;
@@ -145,6 +153,30 @@ img {
   grid-gap: 30px;
   grid-template-columns: repeat(2, 1fr);
   padding: 3rem;
+}
+
+.about {
+  background: var(--primary);
+  box-shadow: var(--shadow);
+  padding: 3rem;
+  padding-left: 20%;
+  padding-right: 20%;
+  text-align: justify;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(73, 72, 72);
+}
+
+.contact {
+  align-content: center;
+  text-align: center;
+}
+
+.contact-label {
+  font-weight: bold;
+}
+
+.contact-detail {
+  margin-top: 0px;
 }
 
 /* Portfolio */
