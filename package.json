@@ -4,14 +4,15 @@
   "description": "haoyi hardware website",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "deploy": "gh-pages -d public"
   },
   "repository": {
     "type": "git"
   },
   "author": "Jacob Song",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.4"
+  "dependencies": {},
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }
