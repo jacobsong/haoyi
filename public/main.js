@@ -1,4 +1,12 @@
 $(document).ready(function () {
+  // load english content
+  $.getJSON('./lang/en.json', function (en) {
+    $('[data-lang]').each(function () {
+      $(this).text(en[$(this).attr('id')]);
+    });
+    $('#home\\.samples').html("<i class='cogs icon'></i>" + en["home.samples"]);
+  });
+
   $('#about').hide();
   $('#contact').hide();
 
