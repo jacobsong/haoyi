@@ -44,6 +44,10 @@ body {
   padding-bottom: 0em;
 }
 
+#about .ui.list .item .content .description {
+  color: rgba(26,26,26,.7);
+}
+
 .column h3.ui.header {
   color: #bdbdbd;
   letter-spacing: .3em;
