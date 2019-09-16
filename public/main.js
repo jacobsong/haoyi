@@ -1,11 +1,10 @@
 $(document).ready(function () {
-  // load english content
-  $.getJSON('./lang/en.json', function (en) {
-    $('[data-lang]').each(function () {
-      $(this).text(en[$(this).attr('id')]);
-    });
-    $('#home\\.samples').html("<i class='cogs icon'></i>" + en["home.samples"]);
-  });
+  // load preferred language
+  if (localStorage.getItem("lang") === null) {
+    changeLangEN();
+  } else {
+    changeLang(localStorage.getItem("lang"));
+  }
 
   $('#about').hide();
   $('#contact').hide();
@@ -14,6 +13,11 @@ $(document).ready(function () {
   $('.ui.sidebar').sidebar('attach events', '.toc.item');
   $('#faq-modal').modal('attach events', '#footer\\.faq', 'show');
   $('#contact-modal').modal('attach events', '#footer\\.contactus', 'show');
+  $('.ui.dropdown').dropdown({
+    action: function (text, value) {
+      changeLang(value);
+    }
+  });
 
   $('#menu\\.home').click(function () {
     showPage("#menu\\.home", "#home");
@@ -44,22 +48,51 @@ $(document).ready(function () {
 
   // Language switcher
   $('.switch-lang-en').click(function () {
+    changeLangEN();
+    $('.ui.dropdown').dropdown("set selected", "en");
+    $('.ui.dropdown').dropdown("hide");
+  });
+
+  $('.switch-lang-cn').click(function () {
+    changeLangCN();
+    $('.ui.dropdown').dropdown("set selected", "cn");
+    $('.ui.dropdown').dropdown("hide");
+  });
+
+  function changeLang(value) {
+    switch (value) {
+      case "en":
+        changeLangEN();
+        break;
+      case "cn":
+        changeLangCN();
+        break;
+      default:
+        changeLangEN();
+    }
+    $('.ui.dropdown').dropdown("set selected", value);
+    $('.ui.dropdown').dropdown("hide");
+  }
+
+  function changeLangEN() {
     $.getJSON('./lang/en.json', function (en) {
       $('[data-lang]').each(function () {
         $(this).text(en[$(this).attr('id')]);
       });
       $('#home\\.samples').html("<i class='cogs icon'></i>" + en["home.samples"]);
     });
-  });
+    localStorage.setItem("lang", "en");
+  }
 
-  $('.switch-lang-cn').click(function () {
+  function changeLangCN() {
     $.getJSON('./lang/cn.json', function (cn) {
       $('[data-lang]').each(function () {
         $(this).text(cn[$(this).attr('id')]);
       });
       $('#home\\.samples').html("<i class='cogs icon'></i>" + cn["home.samples"]);
     });
-  });
+    localStorage.setItem("lang", "cn");
+  }
 
   function showPage(selectedElem, selectedPage) {
     const pages = ["#home", "#about", "#contact"];

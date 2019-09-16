@@ -24,14 +24,6 @@
     <a class="item" id="sidenav.about" data-lang>About</a>
     <a class="item" id="sidenav.catalog" href="./pdf/content.pdf" data-lang>Catalog</a>
     <a class="item" id="sidenav.contact" data-lang>Contact</a>
-    <div class="item">
-      <a class="item icon switch-lang-en">
-        <i class="us flag"></i> English
-      </a>
-      <a class="item icon switch-lang-cn">
-        <i class="cn flag"></i> 中文
-      </a>
-    </div>
   </div>
 
   <!-- Page Contents -->
@@ -40,7 +32,7 @@
     <div class="ui inverted vertical center aligned masthead segment">
       <div class="ui container">
         <div class="ui large secondary inverted pointing menu">
-          <a class="toc item">
+          <a class="toc item" id="mobile-menu">
             <i class="large sidebar icon"></i>
           </a>
           <a class="active item" href="#home" id="menu.home" data-lang>Home</a>
@@ -48,12 +40,20 @@
           <a class="item" href="./pdf/content.pdf" id="menu.catalog" data-lang>Catalog</a>
           <a class="item" href="#contact" id="menu.contact" data-lang>Contact</a>
           <div class="right menu">
-            <a class="ui item icon switch-lang-en">
-              <i class="us flag"></i>
-            </a>
-            <a class="ui item icon switch-lang-cn">
-              <i class="cn flag"></i>
-            </a>
+            <div class="item">
+              <div class="ui selection dropdown">
+                <input type="hidden" name="language">
+                <div class="default text">
+                  <i class="us flag"></i>
+                  English
+                </div>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                  <div class="item" data-value="en"><i class="us flag"></i>English</div>
+                  <div class="item" data-value="cn"><i class="cn flag"></i>中文</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
